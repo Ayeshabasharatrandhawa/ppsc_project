@@ -14,23 +14,22 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { name: "Past papers", icon: <Home size={24} />, link: "/admin/pastpapers" },
-    { name: "Upload Paper", icon: <BookOpen size={24} />, link: "/admin/uploadpaper" },
-    
-    { name: "Upload Mcq", icon: <BookOpen size={24} />, link: "/admin/mcqform" },
-    { name: "Paperslist", icon: <BarChart3 size={24} />, link: "/admin/paperlist" },
-    { name: "StudentData", icon: <Users size={24} />, link: "/admin/studentdata" },
-    { name: "Admin Dashboard", icon: <LayoutDashboard size={24} />, link: "/admin/admindashboard" },
+    { name: "Past papers", icon: <Home size={24} className="text-green-500" />, link: "/admin/pastpapers" },
+    { name: "Upload Paper", icon: <BookOpen size={24} className="text-green-500" />, link: "/admin/uploadpaper" },
+    { name: "Upload Mcq", icon: <BookOpen size={24} className="text-green-500" />, link: "/admin/mcqform" },
+    { name: "Paperslist", icon: <BarChart3 size={24} className="text-green-500" />, link: "/admin/paperlist" },
+    { name: "StudentData", icon: <Users size={24} className="text-green-500" />, link: "/admin/studentdata" },
+    { name: "Admin Dashboard", icon: <LayoutDashboard size={24} className="text-green-500" />, link: "/admin/admindashboard" },
   ];
 
   return (
     <>
       {/* Mobile Toggle Button */}
       <button 
-        className="md:hidden fixed top-4 left-4  text-white p-2 rounded-md z-50"
+        className="md:hidden fixed top-4 left-4 text-white p-2 rounded-md z-50"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <Menu size={28} />
+        <Menu size={28} className="text-green-500" />
       </button>
 
       {/* Fixed Sidebar with Margin from Top */}

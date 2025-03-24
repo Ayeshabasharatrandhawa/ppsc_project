@@ -5,7 +5,7 @@ const DashboardNavbar = () => {
     "https://omah.dexignzone.com/php/demo/assets/images/profile/17.jpg";
 
   return (
-    <nav className="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+    <nav className="bg-green-700 shadow-md px-6 py-4 flex justify-between items-center">
       
       <div className="flex items-center space-x-3">
         <h1 className="text-2xl font-bold ml-30">
@@ -17,7 +17,7 @@ const DashboardNavbar = () => {
       <div className="flex items-center space-x-3">
         <div className="text-right">
           <div className="text-sm font-medium">Henry Jr.</div>
-          <small className="text-gray-500 text-xs">Admin</small>
+          <small className="text-black-500 text-xs">Admin</small>
         </div>
         <img
           src={userAvatar}

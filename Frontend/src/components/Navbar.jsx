@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaSearch, FaChevronRight, FaChevronDown } from "react-icons/fa";
+import { FaUserShield, FaChevronRight, FaChevronDown } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -116,15 +116,21 @@ const Navbar = () => {
                       >
                         {link.name}
                       </Link>
+                      
                     ))}
                   </div>
+                  
                 )}
               </div>
+              
             );
           })}
-          <button className="text-2xl text-white">
-            <FaSearch />
-          </button>
+<button>
+<Link to="/admin" className="text-2xl text-white" aria-label="Admin Dashboard">
+  <FaUserShield />
+</Link>
+
+</button>
         </div>
       </div>
     </nav>

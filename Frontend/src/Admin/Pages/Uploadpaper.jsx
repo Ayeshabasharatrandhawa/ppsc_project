@@ -62,10 +62,10 @@ const UploadPaper = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
-      <div className="bg-white shadow-xl rounded-lg p-8 w-full max-w-lg border border-gray-200">
-        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
-          Upload Past Paper
+    <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-lg border border-gray-200">
+        <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">
+          📄 Upload Past Paper
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-5">
@@ -77,7 +77,7 @@ const UploadPaper = () => {
               value={formData.subject}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-400 outline-none shadow-sm"
             >
               <option value="">Select Subject</option>
               <option value="Mathematics">Mathematics</option>
@@ -97,7 +97,7 @@ const UploadPaper = () => {
               value={formData.classCategory}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-400 outline-none shadow-sm"
             >
               <option value="">Select Class</option>
               <option value="9th">9th</option>
@@ -117,7 +117,7 @@ const UploadPaper = () => {
               value={formData.board}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-400 outline-none shadow-sm"
             >
               <option value="">Select Board</option>
               <option value="Punjab Board">Punjab Board</option>
@@ -135,16 +135,16 @@ const UploadPaper = () => {
               accept="image/*"
               required
               onChange={handleFileChange}
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-gray-100 shadow-sm"
             />
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+            className="w-full bg-green-700 text-white py-3 rounded-xl font-semibold hover:bg-green-800 transition duration-300 shadow-md"
           >
-            Submit
+          Submit
           </button>
         </form>
       </div>

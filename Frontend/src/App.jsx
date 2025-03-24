@@ -18,6 +18,8 @@ import SubmitMCQ from "./pages/SubmitMCQ";
 import ComingSoon from "./pages/ComingSoon";
 import PageNotFound from "./pages/PageNotFound";
 
+import AdminRoutes from "./Admin/AdminRoutes";
+
 
 const App = () => {
   return (
@@ -41,6 +43,8 @@ const App = () => {
         <Route path="/submit-mcq" element={<SubmitMCQ />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="*" element={<PageNotFound />} />
+        
+        <Route path="/admin/*" element={< AdminRoutes/>} />
       </Routes>
     </Router>
   );

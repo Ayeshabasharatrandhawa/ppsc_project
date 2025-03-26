@@ -5,7 +5,7 @@ const DashboardNavbar = () => {
     "https://omah.dexignzone.com/php/demo/assets/images/profile/17.jpg";
 
   return (
-    <nav className="shadow-md px-6 py-4 flex justify-between items-center">
+    <nav className="shadow-md px-6 py-4 flex justify-between items-center bg-white sticky top-0 z-50">
       
       <div className="flex items-center space-x-3">
         <h1 className="text-2xl font-bold ml-10">

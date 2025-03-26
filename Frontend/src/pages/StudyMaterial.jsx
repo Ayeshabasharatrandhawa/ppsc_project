@@ -9,7 +9,7 @@ const StudyMaterial = () => {
   ];
 
   return (
-    <section className="text-center py-10 px-4">
+    <section className="text-center py-10 px-4 mt-15">
       <h2 className="text-3xl font-bold mb-6 font-merriweather leading-tight">
         Access, Download, and Succeed <br /> with Our Notes
       </h2>

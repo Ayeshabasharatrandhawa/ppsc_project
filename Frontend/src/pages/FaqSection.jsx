@@ -28,7 +28,7 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="max-w-2xl p-6 sm:p-8 md:p-10 lg:p-12 text-left">
+    <div className="max-w-2xl p-6 sm:p-8 md:p-10 lg:p-12 text-leftnmt-15">
       <h2
         className="text-3xl sm:text-4xl font-bold mb-4"
         style={{ fontFamily: "Merriweather, serif" }}

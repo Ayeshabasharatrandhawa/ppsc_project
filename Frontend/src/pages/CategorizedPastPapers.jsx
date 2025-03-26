@@ -7,7 +7,7 @@ export default function CategorizedPastPaper() {
         <MainLayout>
             <>
                 <div
-                    className="text-white py-10 px-4 text-center mb-4 md:mb bg-green-700"
+                    className="text-white py-10 px-4 text-center mb-4 md:mb bg-green-700 mt-15"
                 
                 >
                     <h1

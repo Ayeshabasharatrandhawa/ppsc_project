@@ -34,10 +34,9 @@ const Sidebar = () => {
 
       {/* Fixed Sidebar with Margin from Top */}
       <div
-        className={`fixed top-[90px] left-0 h-[calc(100vh-90px)] w-64 bg-white shadow-lg p-4 z-40 transition-transform duration-300
+        className={`fixed top-[90px] left-0 h-[calc(100vh-90px)] w-64 bg-white shadow-lg p-4 flex flex-col justify-between z-40 transition-transform duration-300
           ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}
       >
-        
         <button 
           className="md:hidden absolute top-4 right-4 text-gray-600"
           onClick={() => setIsOpen(false)}
@@ -45,24 +44,37 @@ const Sidebar = () => {
           ✖
         </button>
 
-        <h2 className="text-xl font-bold text-gray-800 mb-6 text-center">Admin Panel</h2>
+        <div>
+          <h2 className="text-xl font-bold text-gray-800 mb-6 text-center">Admin Panel</h2>
 
-        <ul className="space-y-3">
-          {menuItems.map((item) => (
-            <li key={item.name}>
-              <Link
-                to={item.link}
-                className={`flex items-center space-x-4 p-3 rounded-md text-gray-700 text-lg hover:bg-gray-100 transition ${
-                  active === item.name ? "bg-gray-200 font-semibold" : ""
-                }`}
-                onClick={() => setActive(item.name)}
-              >
-                {item.icon}
-                <span className="text-base">{item.name}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+          <ul className="space-y-3">
+            {menuItems.map((item) => (
+              <li key={item.name}>
+                <Link
+                  to={item.link}
+                  className={`flex items-center space-x-4 p-3 rounded-md text-gray-700 text-lg hover:bg-gray-100 transition ${
+                    active === item.name ? "bg-gray-200 font-semibold" : ""
+                  }`}
+                  onClick={() => setActive(item.name)}
+                >
+                  {item.icon}
+                  <span className="text-base">{item.name}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Home Button at the Bottom */}
+        <div className="mt-4">
+          <Link
+            to="/"
+            className="flex items-center space-x-4 p-3 rounded-md text-white bg-green-600 text-lg hover:bg-green-700 transition justify-center"
+          >
+            <Home size={24} className="text-white" />
+            <span className="text-base">Home</span>
+          </Link>
+        </div>
       </div>
     </>
   );

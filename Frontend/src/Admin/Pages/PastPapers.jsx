@@ -41,7 +41,7 @@ const pastPapers = [
 
 const PastPapers = () => {
   return (
-    <div className="min-h-screen py-10 px-4 md:ml-[250px] transition-all duration-300">
+    <div className=" py-10 px-4 md:ml-[250px] transition-all duration-300">
       <h1 className="text-3xl font-bold text-center mb-6">Past Papers</h1>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

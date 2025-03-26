@@ -94,7 +94,7 @@ const UploadPaper = ({ initialData, onSubmit, onCancel }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="flex items-center justify-center px-4">
       <div className="bg-white shadow-xl rounded-lg p-8 w-full max-w-lg border border-gray-200">
         <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
           {initialData ? "Edit Paper" : "Upload Past Paper"}
@@ -102,7 +102,7 @@ const UploadPaper = ({ initialData, onSubmit, onCancel }) => {
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="block text-gray-700 font-medium mb-1">Subject</label>
-            <select name="subject" value={formData.subject} onChange={handleChange} required className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            <select name="subject" value={formData.subject} onChange={handleChange} required className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none">
               <option value="">Select Subject</option>
               <option value="Mathematics">Mathematics</option>
               <option value="Physics">Physics</option>
@@ -110,7 +110,7 @@ const UploadPaper = ({ initialData, onSubmit, onCancel }) => {
           </div>
           <div>
             <label className="block text-gray-700 font-medium mb-1">Class Category</label>
-            <select name="classCategory" value={formData.classCategory} onChange={handleChange} required className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            <select name="classCategory" value={formData.classCategory} onChange={handleChange} required className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none">
               <option value="">Select Class</option>
               <option value="9th">9th</option>
               <option value="10th">10th</option>
@@ -118,7 +118,7 @@ const UploadPaper = ({ initialData, onSubmit, onCancel }) => {
           </div>
           <div>
             <label className="block text-gray-700 font-medium mb-1">Board</label>
-            <select name="board" value={formData.board} onChange={handleChange} required className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none">
+            <select name="board" value={formData.board} onChange={handleChange} required className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none">
               <option value="">Select Board</option>
               <option value="Punjab Board">Punjab Board</option>
             </select>
@@ -128,8 +128,8 @@ const UploadPaper = ({ initialData, onSubmit, onCancel }) => {
             <input type="file" accept="image/*" onChange={handleFileChange} className="w-full px-4 py-3 border rounded-lg" />
           </div>
           <div className="flex gap-4">
-            <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Submit</button>
-            <button type="button" onClick={onCancel} className="w-full bg-gray-400 text-white py-3 rounded-lg font-semibold hover:bg-gray-500 transition">Cancel</button>
+            <button type="submit" className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-500 transition">Submit</button>
+            <button type="button" onClick={onCancel} className="w-full bg-gray-400 text-white py-3 rounded-lg font-semibold hover:bg-green-500 transition">Cancel</button>
           </div>
         </form>
       </div>

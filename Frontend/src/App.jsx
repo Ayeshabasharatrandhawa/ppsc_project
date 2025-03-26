@@ -19,6 +19,10 @@ import ComingSoon from "./pages/ComingSoon";
 import PageNotFound from "./pages/PageNotFound";
 
 import AdminRoutes from "./Admin/AdminRoutes";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import StartQuiz from "./pages/StartQuiz";
+import GetResult from "./pages/GetResult";
 
 
 const App = () => {
@@ -42,9 +46,16 @@ const App = () => {
         <Route path="/set-test" element={<SetTest />} />
         <Route path="/submit-mcq" element={<SubmitMCQ />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
-        <Route path="*" element={<PageNotFound />} />
+         
+        <Route path="/signup" element={< Signup/>} />
+        <Route path="/login" element={< Login/>} />
+        <Route path="/startquiz" element={< StartQuiz/>} />
+        
+        <Route path="/getresult" element={< GetResult/>} />
         
         <Route path="/admin/*" element={< AdminRoutes/>} />
+
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
   );

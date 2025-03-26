@@ -5,7 +5,7 @@ const Contact = () => {
     <MainLayout>
 
 <div
-  className="text-white py-16 px-6 text-center mb-10 bg-green-700"
+  className="text-white py-16 px-6 text-center mb-10 bg-green-700 mt-15"
 
 >
   <h1

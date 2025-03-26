@@ -6,7 +6,7 @@ export default function GetNotes() {
     <MainLayout>
       <>
         <div
-          className="text-white py-8 px-4 text-center mb-3 md:mb-5 bg-green-700"
+          className="text-white py-8 px-4 text-center mb-3 md:mb-5 bg-green-700 mt-15"
           
         >
           <h1

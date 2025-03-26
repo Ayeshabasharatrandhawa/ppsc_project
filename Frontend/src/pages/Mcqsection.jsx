@@ -33,7 +33,7 @@ export default function McqSection() {
   ];
 
   return (
-    <div className="flex flex-col items-center px-6">
+    <div className="flex flex-col items-center px-6 mt-15">
       <div className="max-w-5xl w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
           {mcqs.map((mcq, index) => (

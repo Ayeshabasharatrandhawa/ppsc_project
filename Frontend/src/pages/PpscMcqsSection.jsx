@@ -3,8 +3,8 @@ import { Search } from "lucide-react";
 
 const PPSCSection = () => {
   return (
-    <div className="container mx-auto p-4 flex flex-col lg:flex-row gap-4">
-      {/* MCQs Section */}
+    <div className="container mx-auto p-4 flex flex-col lg:flex-row gap-4 mt-15">
+    
       <div className="lg:w-2/3 text-black-600">
         <h2 className="text-3xl font-bold font-[Merriweather]">PPSC Mcqs</h2>
         <div className="mt-2 space-y-2">

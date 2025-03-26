@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaUserShield, FaChevronRight, FaChevronDown } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,18 +57,23 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-green-700 text-white w-full px-6 py-3">
-      <div className="flex justify-between items-center">
-        <div className="text-2xl font-bold ml-6 font-merriweather cursor-pointer">
+    <nav className="bg-green-700 text-white w-full px-6 py-3 fixed top-0 left-0 z-50">
+      <div className="flex justify-between items-center lg:justify-start">
+    
+        <div className="text-2xl font-bold ml-6 font-merriweather cursor-pointer flex-1">
           LOGO
         </div>
+
+      
         <button
           className="block lg:hidden text-white text-2xl"
           onClick={() => setIsOpen(!isOpen)}
         >
           ☰
         </button>
-        <div className="hidden lg:flex items-center space-x-6 text-[16px] font-opensans">
+
+        
+        <div className="hidden lg:flex lg:items-center lg:space-x-6 text-[16px] font-opensans lg:ml-auto">
           {["Home", "About Us", "Contact Us"].map((name, index) => {
             const path = name.toLowerCase().replace(" ", "-");
             return (
@@ -85,13 +91,17 @@ const Navbar = () => {
             );
           })}
           {dropdowns.map((dropdown, index) => {
-            const isActive = dropdown.links.some((link) => location.pathname === link.path);
+            const isActive = dropdown.links.some(
+              (link) => location.pathname === link.path
+            );
 
             return (
               <div key={index} className="relative dropdown">
                 <button
                   className={`flex items-center ${
-                    isActive || dropdownOpen === index ? "text-yellow-300" : "hover:text-yellow-300"
+                    isActive || dropdownOpen === index
+                      ? "text-yellow-300"
+                      : "hover:text-yellow-300"
                   }`}
                   onClick={(e) => {
                     e.stopPropagation();
@@ -103,36 +113,113 @@ const Navbar = () => {
                     {dropdownOpen === index ? <FaChevronDown /> : <FaChevronRight />}
                   </span>
                 </button>
-                {dropdownOpen === index && (
-                  <div className="absolute bg-white text-black mt-2 py-2 w-48 shadow-lg z-50">
-                    {dropdown.links.map((link, i) => (
-                      <Link
-                        key={i}
-                        to={link.path}
-                        className={`block px-4 py-2 hover:bg-gray-200 text-sm ${
-                          location.pathname === link.path ? "text-yellow-500 font-bold" : ""
-                        }`}
-                        onClick={() => setDropdownOpen(null)}
-                      >
-                        {link.name}
-                      </Link>
-                      
-                    ))}
-                  </div>
-                  
-                )}
-              </div>
+            
+                  {dropdownOpen === index && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute bg-white text-black mt-2 py-2 w-48 shadow-lg rounded"
+                    >
+                      {dropdown.links.map((link, i) => (
+                        <Link
+                          key={i}
+                          to={link.path}
+                          className={`block px-4 py-2 hover:bg-gray-200 text-sm ${
+                            location.pathname === link.path ? "text-yellow-500 font-bold" : ""
+                          }`}
+                          onClick={() => setDropdownOpen(null)}
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
               
+              </div>
             );
           })}
-<button>
-<Link to="/admin" className="text-2xl text-white" aria-label="Admin Dashboard">
-  <FaUserShield />
-</Link>
-
-</button>
+          <button>
+            <Link to="/admin" className="text-2xl text-white" aria-label="Admin Dashboard">
+              <FaUserShield />
+            </Link>
+          </button>
         </div>
       </div>
+
+      
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 left-0 w-3/4 h-full bg-green-700 text-white p-6 shadow-lg z-50"
+          >
+            <button
+              className="text-white text-2xl absolute top-4 right-6"
+              onClick={() => setIsOpen(false)}
+            >
+              ✖
+            </button>
+            <div className="flex flex-col space-y-4 text-lg">
+              {["Home", "About Us", "Contact Us"].map((name, index) => {
+                const path = name.toLowerCase().replace(" ", "-");
+                return (
+                  <Link
+                    key={index}
+                    to={`/${path === "home" ? "" : path}`}
+                    className={`hover:text-yellow-300 ${
+                      location.pathname === `/${path === "home" ? "" : path}`
+                        ? "text-yellow-300"
+                        : "text-white"
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {name}
+                  </Link>
+                );
+              })}
+              {dropdowns.map((dropdown, index) => (
+                <div key={index} className="dropdown">
+                  <button
+                    className="flex items-center w-full justify-between text-left"
+                    onClick={() => toggleDropdown(index)}
+                  >
+                    {dropdown.title}
+                    {dropdownOpen === index ? <FaChevronDown /> : <FaChevronRight />}
+                  </button>
+                  
+                    {dropdownOpen === index && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -5 }}
+                        className="ml-4 mt-2 space-y-2"
+                      >
+                        {dropdown.links.map((link, i) => (
+                          <Link
+                            key={i}
+                            to={link.path}
+                            className="block text-sm hover:text-yellow-300"
+                            onClick={() => {
+                              setIsOpen(false);
+                              setDropdownOpen(null);
+                            }}
+                          >
+                            {link.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

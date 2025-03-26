@@ -5,6 +5,7 @@ const MCQForm = () => {
     mcq_question: "",
     mcq_answer: "",
     mcq_image: null,
+    subject: "",
   });
 
   const handleChange = (e) => {
@@ -23,8 +24,8 @@ const MCQForm = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50">
-      <div className="bg-white p-8 rounded-2xl shadow-xl w-96 border border-gray-200">
+    <div className="flex items-center justify-center mt-10 px-4">
+      <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-200 w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">
           📝 MCQ Submission
         </h2>
@@ -53,6 +54,24 @@ const MCQForm = () => {
             onChange={handleFileChange}
             required
           />
+          <div>
+            <select
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-400 outline-none shadow-sm"
+            >
+              <option value="">Select Subject</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Physics">Physics</option>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Biology">Biology</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="English">English</option>
+            </select>
+          </div>
+
           <button
             type="submit"
             className="w-full bg-green-700 text-white p-3 rounded-xl hover:bg-green-800 transition duration-300 shadow-md"

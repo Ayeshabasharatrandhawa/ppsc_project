@@ -6,7 +6,7 @@ import McqSection from "./Mcqsection";
 const StartGK = () => {
   return (
     <MainLayout>
-       <div className="bg-green-700 text-white py-16 px-6 text-center">
+       <div className="bg-green-700 text-white py-16 px-6 text-center mt-15">
       
       <h1
         className="text-2xl md:text-5xl font-bold"

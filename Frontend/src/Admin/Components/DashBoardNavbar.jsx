@@ -5,10 +5,10 @@ const DashboardNavbar = () => {
     "https://omah.dexignzone.com/php/demo/assets/images/profile/17.jpg";
 
   return (
-    <nav className="bg-green-700 shadow-md px-6 py-4 flex justify-between items-center">
+    <nav className="shadow-md px-6 py-4 flex justify-between items-center">
       
       <div className="flex items-center space-x-3">
-        <h1 className="text-2xl font-bold ml-30">
+        <h1 className="text-2xl font-bold ml-10">
           LOGO.<span className="text-yellow-400"></span>
         </h1>
       </div>

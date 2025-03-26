@@ -9,7 +9,7 @@ const SubmitMCQ = () => {
 
 
         <div>
-        <div className="bg-green-700 text-white py-16 px-6 text-center">
+        <div className="bg-green-700 text-white py-16 px-6 text-center mt-15">
       
       <h1
         className="text-2xl md:text-5xl font-bold"
@@ -24,7 +24,7 @@ const SubmitMCQ = () => {
 
     </div>
     
-        </div> <div className="flex flex-col items-center min-h-screen  p-6 pt-[100px]">
+        </div> <div className="flex flex-col items-center min-h-screen  p-6 pt-[100px] mt-15">
       
       
       <h2 className="text-3xl font-merriweather text-center mb-6 text-black font-bold">

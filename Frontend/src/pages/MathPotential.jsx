@@ -5,7 +5,7 @@ const MathPotential = () => {
   return (
     <MainLayout>
 
-<div className="bg-green-700 text-white py-12 px-6 text-center md:py-16">
+<div className="bg-green-700 text-white py-12 px-6 text-center md:py-16 mt-15">
         <h1
           className="text-2xl md:text-5xl font-bold leading-snug"
           style={{ fontFamily: "Merriweather, serif" }}

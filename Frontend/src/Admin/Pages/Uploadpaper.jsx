@@ -62,14 +62,14 @@ const UploadPaper = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50">
+    <div className="flex items-center justify-center"> 
       <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-lg border border-gray-200">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">
           📄 Upload Past Paper
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-5">
-          {/* Subject Selection */}
+      
           <div>
             <label className="block text-gray-700 font-medium mb-1">Subject</label>
             <select
